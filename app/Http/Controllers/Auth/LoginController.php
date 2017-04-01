@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Redirect;
 // use Illuminate\Http\Request;
 use Socialite;
 use Auth;
@@ -54,13 +55,20 @@ class LoginController extends Controller
          return redirect('auth/azure');
       }
 
-      // dd($user);
-
       $authUser = $this->findOrCreateUser($azureUser);
+      
+      $yep = 'yep';
+      $nope = 'nope';
+      
+      if($authUser->active){
+         Auth::login($authUser, true);
 
-      Auth::login($authUser, true);
+         return redirect()->intended('home');
+      }
+      
+      return Redirect::route('activation');
 
-      return redirect()->intended('home');
+      
     }
 
     private function findOrCreateUser($user)
