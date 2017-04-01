@@ -13,7 +13,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+         // allow registration from particular domains
+         \Validator::extend('email_domain', function($attribute, $value, $parameters, $validator) {
+              $allowedEmailDomains = ['corus360.com', 'resqdr.com'];
+              return in_array( explode('@', $parameters[0])[1] , $allowedEmailDomains);
+         });
     }
 
     /**

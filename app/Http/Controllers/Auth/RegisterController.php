@@ -48,7 +48,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'email' => 'required|email|max:255|unique:users',
+            // pass through AppServiceProvider to validate eligible domains
+            'email' => 'required|email_domain:' . $data['email'] . '|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
     }
