@@ -15,10 +15,11 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password')->nullable();
-            $table->string('azure_id')->unique();
+            $table->string('name');                   // name will be pulled from azure
+            $table->string('email')->unique();        // users do need to provide email upon registration
+            $table->string('password')->nullable();   // users can later set a password in case of azure failure
+            $table->string('azure_id')->unique();     // initial registration
+            $table->boolean('active')->default(0);    // users need admin approval after initial registration
             $table->rememberToken();
             $table->timestamps();
         });

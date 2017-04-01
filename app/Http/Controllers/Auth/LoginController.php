@@ -49,31 +49,32 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
       try {
-         $user = Socialite::with('azure')->user();
+         $azureUser = Socialite::with('azure')->user();
       } catch (Exception $e){
          return redirect('auth/azure');
       }
 
-      $authUser = $this->findOrCreateUser($user);
+      // dd($user);
+
+      $authUser = $this->findOrCreateUser($azureUser);
 
       Auth::login($authUser, true);
-      //dd($user);
 
-      return redirect()->action('HomeController@index');
+      return redirect()->intended('home');
     }
 
-    private function findOrCreateUser($azureUser)
+    private function findOrCreateUser($user)
     {
-      $authUser = User::where('azure_id', $azureUser->id)->first();
+      $authUser = User::where('azure_id', $user->id)->first();
 
       if($authUser){
          return $authUser;
       }
 
       return User::create([
-         'name' => $azureUser->name,
-         'email' => $azureUser->email,
-         'azure_id' => $azureUser->id,
+         'name' => $user->name,
+         'email' => $user->email,
+         'azure_id' => $user->id,
       ]);
     }
 
