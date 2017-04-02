@@ -57,16 +57,15 @@ class LoginController extends Controller
 
       $authUser = $this->findOrCreateUser($azureUser);
       
-      $yep = 'yep';
-      $nope = 'nope';
-      
-      if($authUser->active){
+      if($authUser->isRole('super|admin|member'))
+      {
          Auth::login($authUser, true);
 
          return redirect()->intended('home');
       }
       
-      return Redirect::route('activation');
+      // first-time login from user requires activation
+      return redirect('activation');
 
       
     }
@@ -78,12 +77,18 @@ class LoginController extends Controller
       if($authUser){
          return $authUser;
       }
+      
+      $deactivatedRole = \HttpOz\Roles\Models\Role::whereSlug('deactivated')->first();
 
-      return User::create([
+      $newUser = User::create([
          'name' => $user->name,
          'email' => $user->email,
          'azure_id' => $user->id,
       ]);
+      
+      $newUser->attachRole($deactivatedRole);
+      
+      return $newUser;
     }
 
 

@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();        // users do need to provide email upon registration
             $table->string('password')->nullable();   // users can later set a password in case of azure failure
             $table->string('azure_id')->unique();     // initial registration
-            $table->boolean('active')->default(0);    // users need admin approval after initial registration
             $table->rememberToken();
             $table->timestamps();
         });
