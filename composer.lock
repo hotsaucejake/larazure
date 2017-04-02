@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9c86527726621db97b1f3fa1d29b048",
+    "content-hash": "d7d9e43faa3ec3986d5a5c95ad1cd133",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -325,6 +325,53 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "httpoz/roles",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/httpoz/roles.git",
+                "reference": "a65ea3b349a36dd06d2de8e84b3b399edab3fcda"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/httpoz/roles/zipball/a65ea3b349a36dd06d2de8e84b3b399edab3fcda",
+                "reference": "a65ea3b349a36dd06d2de8e84b3b399edab3fcda",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.4.*",
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HttpOz\\Roles\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oscar Mwanandimai",
+                    "email": "oscar.mwana@gmail.com",
+                    "role": "Architect"
+                }
+            ],
+            "description": "Powerful package for handling roles and permissions in Laravel 5.3.",
+            "homepage": "https://github.com/httpoz/roles",
+            "keywords": [
+                "acl",
+                "httpoz",
+                "illuminate",
+                "laravel",
+                "permissions",
+                "roles"
+            ],
+            "time": "2017-01-27T13:32:32+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -2753,16 +2800,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "4.0.7",
+            "version": "4.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "09e2277d14ea467e5a984010f501343ef29ffc69"
+                "reference": "ef7b2f56815df854e66ceaee8ebe9393ae36a40d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/09e2277d14ea467e5a984010f501343ef29ffc69",
-                "reference": "09e2277d14ea467e5a984010f501343ef29ffc69",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ef7b2f56815df854e66ceaee8ebe9393ae36a40d",
+                "reference": "ef7b2f56815df854e66ceaee8ebe9393ae36a40d",
                 "shasum": ""
             },
             "require": {
@@ -2812,7 +2859,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-01T09:12:17+00:00"
+            "time": "2017-04-02T07:44:40+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3002,16 +3049,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.17",
+            "version": "5.7.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "68752b665d3875f9a38a357e3ecb35c79f8673bf"
+                "reference": "c6884c0d4b8a7277de7ae3c9e597aff138c6365f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/68752b665d3875f9a38a357e3ecb35c79f8673bf",
-                "reference": "68752b665d3875f9a38a357e3ecb35c79f8673bf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c6884c0d4b8a7277de7ae3c9e597aff138c6365f",
+                "reference": "c6884c0d4b8a7277de7ae3c9e597aff138c6365f",
                 "shasum": ""
             },
             "require": {
@@ -3080,7 +3127,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-19T16:52:12+00:00"
+            "time": "2017-04-02T15:44:48+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
