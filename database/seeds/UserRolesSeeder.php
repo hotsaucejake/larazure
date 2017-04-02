@@ -25,5 +25,10 @@ class UserRolesSeeder extends Seeder
             'name' => 'Member',
             'slug' => 'member',
          ]);
+         
+         \HttpOz\Roles\Models\Role::create([
+            'name' => 'Deactivated',
+            'slug' => 'deactivated',
+         ]);
     }
 }
